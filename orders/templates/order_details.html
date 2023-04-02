@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food court</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row pt-5 pb-2">
+        <h3 class="m-auto">Order Details</h3>
+    </div>
+    <div class="row pb-4">
+        <p class="m-auto">Order Date: {{ order_data.date|date:"M d, Y" }}</p>
+    </div>
+    <div class="row">
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Menu</th>
+                    <th scope="col">qty</th>
+                    <th scope="col">price</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% if order_data %}
+                {% for item in order_data.items.all %}
+                <tr>
+                    <th data-id="{{ item.id }}" scope="row">{{forloop.counter}}</th>
+                    <td>{{ item.title }}</td>
+                    <td>1</td>
+                    <td class="order_unit_price" data-price="{{ item.unit_price }}">${{ item.unit_price }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td class="text-right"><b>Total:</b></td>
+                    <td><b id="total_order_price">$0</b></td>
+                </tr>
+                {% else %}
+                <p>Order id not found.</p>
+                {% endif %}
+
+                </tbody>
+            </table>
+        <div class="row pt-5 pb-2 m-auto">
+            <a href="/inventories/" type="submit" class="btn btn-dark">Home</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+var total_price = 0;
+$(".order_unit_price").each(function () {
+    total_price = total_price + parseFloat($(this).data("price"));
+        });
+        $("#total_order_price").html("$" + total_price)
+});
+</script>
+
+</body>
+</html>
