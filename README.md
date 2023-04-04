@@ -31,8 +31,8 @@ python manage.py createsuperuser
 # Manage the inventories by logging admin console
 http://0.0.0.0:8000/admin/
 
-Enter username as admin
-Enter email as admin@admin.com
+Enter username as admin |
+Enter email as admin@admin.com |
 Enter password as test1234
 
 # Below URl is the main page to order the food
