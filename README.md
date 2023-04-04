@@ -24,7 +24,7 @@ docker run -p 8000:8000 dockerhubkarthik/foodcourt:2.0.0
 
 ### Run the below commands by using the docker command "docker exec -it <container ID> /bin/bash".
 
-python manage.py migrate
+python manage.py migrate |
 python manage.py createsuperuser
 
 
