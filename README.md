@@ -35,11 +35,11 @@ Enter username as admin |
 Enter email as admin@admin.com | 
 Enter password as test1234
 
-### Below URl is the main page to order the food
+### Below URL is the main page to order the food
 http://0.0.0.0:8000/inventories/
 
 
-### Pending tasks
+### More work on the current project
 1) Currently working on creating kubernetes yaml file for Django foodcourt app.
 
 2) Mysql kubernetes yaml file is already created and deployed to kubernetes and tested. It is yet to be checked into this repository. 
