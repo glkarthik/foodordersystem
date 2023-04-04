@@ -22,18 +22,24 @@ docker build . -t dockerhubkarthik/foodcourt:2.0.0
 
 docker run -p 8000:8000 dockerhubkarthik/foodcourt:2.0.0
 
-# Run the below commands by using the docker command "docker exec -it <container ID> /bin/bash".
+### Run the below commands by using the docker command "docker exec -it <container ID> /bin/bash".
 
 python manage.py migrate
 python manage.py createsuperuser
 
 
-# Manage the inventories by logging admin console
+### Manage the inventories by logging admin console
 http://0.0.0.0:8000/admin/
 
 Enter username as admin |
-Enter email as admin@admin.com |
+Enter email as admin@admin.com | 
 Enter password as test1234
 
-# Below URl is the main page to order the food
+### Below URl is the main page to order the food
 http://0.0.0.0:8000/inventories/
+
+
+### Pending tasks
+1) Currently working on creating kubernetes yaml file for Django foodcourt app.
+
+2) Mysql kubernetes yaml file is already created and deployed to kubernetes and tested. It is yet to be checked into this repository. 
