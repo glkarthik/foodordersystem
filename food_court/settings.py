@@ -25,7 +25,7 @@ SECRET_KEY = 'sui0580w1*-^hlc*r44pwy7b3#6rq@qr&7hro-=+^!#9=6bl!*&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'foodcourt',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'HOST': '192.168.1.114',
         'PORT': '3306',
     }
 }
